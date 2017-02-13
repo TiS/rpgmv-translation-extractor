@@ -16,3 +16,4 @@ nbproject/private
 
 # Distribution files
 dist/*
+build/*
