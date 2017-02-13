@@ -2,11 +2,7 @@ package rpgmakertranslationextractor;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
 import java.util.TreeMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -18,7 +14,6 @@ import org.apache.commons.io.filefilter.SuffixFileFilter;
 
 /**
  *
- * @author Tomasz Struczyński <t.struczynski@gmail.com>
  */
 public class Extractor {
     private final File inputFolder;

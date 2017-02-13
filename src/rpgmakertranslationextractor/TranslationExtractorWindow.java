@@ -16,7 +16,6 @@ import javax.swing.event.DocumentListener;
 
 /**
  *
- * @author Tomasz Struczyński <t.struczynski@gmail.com>
  */
 public class TranslationExtractorWindow extends javax.swing.JFrame {
 
