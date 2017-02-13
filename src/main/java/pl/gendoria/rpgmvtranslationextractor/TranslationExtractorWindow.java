@@ -63,48 +63,49 @@ public class TranslationExtractorWindow extends javax.swing.JFrame {
         exit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("RPG Maker translation extractor");
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("pl/gendoria/rpgmvtranslationextractor/Bundle"); // NOI18N
+        setTitle(bundle.getString("TranslationExtractorWindow.title")); // NOI18N
         setResizable(false);
 
-        settingsPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("Extraction settings"));
-        settingsPanel.setToolTipText("Extractor settings");
+        settingsPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(bundle.getString("TranslationExtractorWindow.settingsPanel.border.title"))); // NOI18N
+        settingsPanel.setToolTipText(bundle.getString("TranslationExtractorWindow.settingsPanel.toolTipText")); // NOI18N
         settingsPanel.setName(""); // NOI18N
 
         keyFormatLabel.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        keyFormatLabel.setText("Key format");
+        keyFormatLabel.setText(bundle.getString("TranslationExtractorWindow.keyFormatLabel.text")); // NOI18N
 
         inputFolderLabel.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        inputFolderLabel.setText("Input folder");
+        inputFolderLabel.setText(bundle.getString("TranslationExtractorWindow.inputFolderLabel.text")); // NOI18N
 
         outputFolderLabel.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        outputFolderLabel.setText("Output folder");
+        outputFolderLabel.setText(bundle.getString("TranslationExtractorWindow.outputFolderLabel.text")); // NOI18N
 
-        keyFormat.setText("#{{key}}");
-        keyFormat.setToolTipText("Use same format, as in Iavra plugin.");
+        keyFormat.setText(bundle.getString("TranslationExtractorWindow.keyFormat.text")); // NOI18N
+        keyFormat.setToolTipText(bundle.getString("TranslationExtractorWindow.keyFormat.toolTipText")); // NOI18N
         keyFormat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 keyFormatActionPerformed(evt);
             }
         });
 
-        inputFolderChooser.setText("Choose");
+        inputFolderChooser.setText(bundle.getString("TranslationExtractorWindow.inputFolderChooser.text")); // NOI18N
         inputFolderChooser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inputFolderChooserActionPerformed(evt);
             }
         });
 
-        outputFolderChooser.setText("Choose");
+        outputFolderChooser.setText(bundle.getString("TranslationExtractorWindow.outputFolderChooser.text")); // NOI18N
         outputFolderChooser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 outputFolderChooserActionPerformed(evt);
             }
         });
 
-        outputFile.setText("_originals.iavra.json");
+        outputFile.setText(bundle.getString("TranslationExtractorWindow.outputFile.text")); // NOI18N
 
         outputFileLabel.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-        outputFileLabel.setText("Output file");
+        outputFileLabel.setText(bundle.getString("TranslationExtractorWindow.outputFileLabel.text")); // NOI18N
 
         outputFilePath.setFont(new java.awt.Font("Dialog", 2, 12)); // NOI18N
 
@@ -160,14 +161,14 @@ public class TranslationExtractorWindow extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        start.setText("Start");
+        start.setText(bundle.getString("TranslationExtractorWindow.start.text")); // NOI18N
         start.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 startActionPerformed(evt);
             }
         });
 
-        exit.setText("Exit");
+        exit.setText(bundle.getString("TranslationExtractorWindow.exit.text")); // NOI18N
         exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 exitActionPerformed(evt);
