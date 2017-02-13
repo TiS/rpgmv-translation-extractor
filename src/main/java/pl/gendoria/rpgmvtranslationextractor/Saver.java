@@ -32,14 +32,14 @@ public class Saver {
                 .create()
                 ;
         
-        FileUtils.writeStringToFile(output, gson.toJson(contents), "UTF-8");
+        FileUtils.writeStringToFile(output, gson.toJson(contents), "UTF-8"); //NOI18N
     }
     
     private TreeMap<String, String> parseCurrent() throws IOException {
         TreeMap<String, String> current = new TreeMap<>();
         
         if (output.isFile()) {
-            String fileContents = FileUtils.readFileToString(output, "UTF-8");
+            String fileContents = FileUtils.readFileToString(output, "UTF-8"); //NOI18N
             Gson gson = new Gson();
             current = gson.fromJson(fileContents, current.getClass());
         }

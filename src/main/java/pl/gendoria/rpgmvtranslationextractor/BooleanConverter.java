@@ -14,7 +14,7 @@ public class BooleanConverter extends Converter<String, Boolean> {
 
     @Override
     public String convertReverse(Boolean value) {
-        return value ? "true" : "false";
+        return value ? "true" : "false"; //NOI18N
     }
     
 }
