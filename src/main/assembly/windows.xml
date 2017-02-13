@@ -30,7 +30,7 @@
                 <include>NOTICE*</include>
             </includes>
             <useDefaultExcludes>true</useDefaultExcludes>
-            <lineEnding>windows</lineEnding>
+            <lineEnding>crlf</lineEnding>
         </fileSet>
 
         <fileSet>
@@ -42,6 +42,7 @@
             </includes>
             <fileMode>0755</fileMode>
             <filtered>true</filtered>
+            <lineEnding>crlf</lineEnding>
         </fileSet>
         
         <fileSet>
