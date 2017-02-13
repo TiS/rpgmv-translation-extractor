@@ -15,5 +15,4 @@ hs_err_pid*
 nbproject/private
 
 # Distribution files
-dist/*
-build/*
+/target/

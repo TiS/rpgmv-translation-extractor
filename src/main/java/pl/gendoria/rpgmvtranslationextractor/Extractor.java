@@ -1,4 +1,4 @@
-package rpgmakertranslationextractor;
+package pl.gendoria.rpgmvtranslationextractor;
 
 import java.io.File;
 import java.io.IOException;

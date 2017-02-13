@@ -1,4 +1,4 @@
-package rpgmakertranslationextractor;
+package pl.gendoria.rpgmvtranslationextractor;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

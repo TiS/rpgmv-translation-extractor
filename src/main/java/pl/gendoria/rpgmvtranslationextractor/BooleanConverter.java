@@ -1,4 +1,4 @@
-package rpgmakertranslationextractor;
+package pl.gendoria.rpgmvtranslationextractor;
 
 import org.jdesktop.beansbinding.Converter;
 
