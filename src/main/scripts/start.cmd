@@ -1,2 +1,2 @@
 @echo off
-java -jar %~dp0${jar.name}.jar %*
+javaw -jar %~dp0@jar.name@.jar %*
