@@ -6,6 +6,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
+import org.apache.commons.lang3.StringEscapeUtils;
 
 /**
  *
@@ -273,7 +274,7 @@ public class TranslationExtractorWindow extends javax.swing.JFrame {
         }
 
         if (output.isFile()) {
-            int ret = JOptionPane.showConfirmDialog(rootPane, java.util.ResourceBundle.getBundle("pl/gendoria/rpgmvtranslationextractor/Bundle").getString("TranslationExtractorWindow.start.outputFileExistsWarning.text"), java.util.ResourceBundle.getBundle("pl/gendoria/rpgmvtranslationextractor/Bundle").getString("TranslationExtractorWindow.start.outputFileExistsWarning.label"), JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+            int ret = JOptionPane.showConfirmDialog(rootPane, StringEscapeUtils.unescapeJava(java.util.ResourceBundle.getBundle("pl/gendoria/rpgmvtranslationextractor/Bundle").getString("TranslationExtractorWindow.start.outputFileExistsWarning.text")), java.util.ResourceBundle.getBundle("pl/gendoria/rpgmvtranslationextractor/Bundle").getString("TranslationExtractorWindow.start.outputFileExistsWarning.label"), JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
             if (ret == JOptionPane.NO_OPTION) {
                 return;
             }
