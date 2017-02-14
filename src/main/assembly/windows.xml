@@ -34,18 +34,6 @@
         </fileSet>
 
         <fileSet>
-            <directory>${project.build.directory}/scripts</directory>
-            <outputDirectory></outputDirectory>
-            <includes>
-                <include>*.cmd</include>
-                <include>*.bat</include>
-            </includes>
-            <fileMode>0755</fileMode>
-            <filtered>true</filtered>
-            <lineEnding>crlf</lineEnding>
-        </fileSet>
-        
-        <fileSet>
             <directory>${project.build.directory}</directory>
             <outputDirectory></outputDirectory>
             <includes>
@@ -60,6 +48,14 @@
                 <include>*.jar</include>
             </includes>
         </fileSet>
+        
+        <fileSet>
+            <directory>${project.build.directory}</directory>
+            <outputDirectory>/</outputDirectory>
+            <includes>
+                <include>start.exe</include>
+            </includes>
+        </fileSet>        
     </fileSets>
 
 </assembly>

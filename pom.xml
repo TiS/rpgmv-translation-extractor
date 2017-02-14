@@ -10,6 +10,7 @@
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
         <jar.name>${project.artifactId}-${project.version}</jar.name>
+        <main.class>pl.gendoria.rpgmvtranslationextractor.TranslationExtractorWindow</main.class>
     </properties>
     <name>Rpg Maker MV Translation Extractor</name>
     <build>
@@ -26,11 +27,40 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>libs/</classpathPrefix>
-                            <mainClass>pl.gendoria.rpgmvtranslationextractor.TranslationExtractorWindow</mainClass>
+                            <mainClass>${main.class}</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>com.akathist.maven.plugins.launch4j</groupId>
+                <artifactId>launch4j-maven-plugin</artifactId>
+                <version>1.7.15</version>
+                <executions>
+                    <execution>
+                        <id>l4j-gui</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>launch4j</goal>
+                        </goals>
+                        <configuration>
+                            <headerType>gui</headerType>
+                            <outfile>${project.build.directory}/start.exe</outfile>
+                            <jar>${jar.name}.jar</jar>
+                            <dontWrapJar>true</dontWrapJar>
+                            <errTitle>encc</errTitle>
+                            <classPath>
+                                <mainClass>${main.class}</mainClass>
+                                <addDependencies>false</addDependencies>
+                                <preCp>anything</preCp>
+                            </classPath>
+                            <jre>
+                                <minVersion>1.7.0</minVersion>
+                            </jre>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>            
             <plugin>
                 <artifactId>maven-resources-plugin</artifactId>
                 <version>3.0.2</version>
