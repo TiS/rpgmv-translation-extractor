@@ -20,7 +20,7 @@ deploy:
     api_key:
         secure: uAuS8tpSV3bONNlobXkeg9y9+KQ7Zo9om9vr42DQWmc/nW859F0pmHAamANnNn0Sts6cQu7WTGTAYryZCJbzdI7VQsAws1o3ZnZjyKb8z8Xhx20/IZ4WLn9LuI8Gr8fwR/GF1w+ppvsRza2rdLwKcEsX2uPBVgbBoZo81RWsbe4qCO9zntrLXIDRG+TRQcDkn4q+rLXMLKmrXCRk84TX1OUh48zAWFtT+bJsyLtXIqIdpPC+w9VzZOhXGFPAvDI1FV1W9ddipPQQecjk7hxe0gg5jfncmgzFzxSvA+bHlMe07tGOBo8g1avwpr8EBQvodt+dpeuEyhiieKtMOlcvG/EdCX8BAEiqGAS0aMRUGzJl1SEayjSFYrXDbhssY2zPDwAVCThjO8diSbF4rqRMa2+slKbivrh4uZdg9+hPW1nWvr85GYzmlxv1haijgGcxs0l4SgSjmntHBhBbk8TpKbDfjr5NRervqe3WraMuVBtFOCys/sJYD3ICDzBOlafLJJJSJohS/QTOboAbfX/A7zgrYWFOZL9jOCvUHwtPTtZ4Ga5vXf5v8/JhaVLvtJviqOfr0dpMD6WeZck0S/JvgWoXyGuGf+cg3UW1JdJnvMSKUQ6K5pTBFeZJjjrS3AXGUnEZGZ/vdikTlXii4zdVYgmNpqo4fgb3rBQNoFCdYk4=
     file_glob: true
-    file: "${RELEASE_FILE}"
+    file: "target/dist/*"
     skip_cleanup: true
     on:
         repo: TiS/rpgmv-translation-extractor
