@@ -48,7 +48,7 @@
                             <outfile>${project.build.directory}/start.exe</outfile>
                             <jar>${jar.name}.jar</jar>
                             <dontWrapJar>true</dontWrapJar>
-                            <errTitle>encc</errTitle>
+                            <errTitle>Rpg Maker MV Translation Extractor</errTitle>
                             <classPath>
                                 <mainClass>${main.class}</mainClass>
                                 <addDependencies>false</addDependencies>
@@ -57,6 +57,17 @@
                             <jre>
                                 <minVersion>1.7.0</minVersion>
                             </jre>
+                            <versionInfo>
+                                <fileVersion>${jgitver.base_tag}.0</fileVersion>
+                                <txtFileVersion>${project.version}</txtFileVersion>
+                                <fileDescription>${project.name}</fileDescription>
+                                <copyright>MIT</copyright>
+                                <productVersion>${jgitver.base_tag}.0</productVersion>
+                                <txtProductVersion>${project.version}</txtProductVersion>
+                                <productName>${project.name}</productName>
+                                <internalName>${project.artifactId}</internalName>
+                                <originalFilename>start.exe</originalFilename>
+                            </versionInfo>
                         </configuration>
                     </execution>
                 </executions>
