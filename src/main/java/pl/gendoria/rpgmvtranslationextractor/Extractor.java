@@ -28,7 +28,7 @@ public class Extractor {
     }
     
     public TreeMap<String, String> extract() {
-        System.out.println(java.text.MessageFormat.format(java.util.ResourceBundle.getBundle("pl/gendoria/rpgmvtranslationextractor/Bundle").getString("Extractor.scanning"), new Object[] {inputFolder.getAbsolutePath()}));
+        System.out.println(java.text.MessageFormat.format(java.util.ResourceBundle.getBundle("pl/gendoria/rpgmvtranslationextractor/Extractor").getString("Extractor.scanning"), new Object[] {inputFolder.getAbsolutePath()}));
         System.out.println();
         
         Iterator<File> files = FileUtils.iterateFiles(inputFolder, new SuffixFileFilter(".json"), DirectoryFileFilter.DIRECTORY); //NOI18N
@@ -36,7 +36,7 @@ public class Extractor {
         
         while (files.hasNext()) {
             File file = files.next();
-            System.out.println(java.text.MessageFormat.format(java.util.ResourceBundle.getBundle("pl/gendoria/rpgmvtranslationextractor/Bundle").getString("Extractor.file"), new Object[] {file.getAbsoluteFile()}));
+            System.out.println(java.text.MessageFormat.format(java.util.ResourceBundle.getBundle("pl/gendoria/rpgmvtranslationextractor/Extractor").getString("Extractor.file"), new Object[] {file.getAbsoluteFile()}));
             try {
                 Matcher matcher = this.keyRegexp.matcher(FileUtils.readFileToString(file, "UTF-8")); //NOI18N
                 while (matcher.find()) {
@@ -44,7 +44,7 @@ public class Extractor {
                         continue;
                     }
                     
-                    System.out.println(java.text.MessageFormat.format(java.util.ResourceBundle.getBundle("pl/gendoria/rpgmvtranslationextractor/Bundle").getString("Extractor.key"), new Object[] {matcher.group(1)}));
+                    System.out.println(java.text.MessageFormat.format(java.util.ResourceBundle.getBundle("pl/gendoria/rpgmvtranslationextractor/Extractor").getString("Extractor.key"), new Object[] {matcher.group(1)}));
                     allMatches.put(matcher.group(1), "__TRANSLATE__"); //NOI18N
                 }
             } catch (IOException ex) {

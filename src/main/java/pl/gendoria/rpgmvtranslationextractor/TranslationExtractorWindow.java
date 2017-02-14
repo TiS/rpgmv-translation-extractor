@@ -64,7 +64,7 @@ public class TranslationExtractorWindow extends javax.swing.JFrame {
         exit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("pl/gendoria/rpgmvtranslationextractor/Bundle"); // NOI18N
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("pl/gendoria/rpgmvtranslationextractor/TranslationExtractorWindow"); // NOI18N
         setTitle(bundle.getString("TranslationExtractorWindow.title")); // NOI18N
         setResizable(false);
 
@@ -213,7 +213,7 @@ public class TranslationExtractorWindow extends javax.swing.JFrame {
     private void outputFolderChooserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_outputFolderChooserActionPerformed
         JFileChooser chooser = new JFileChooser(outputFolder.getText());
         chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-        chooser.setApproveButtonText(java.util.ResourceBundle.getBundle("pl/gendoria/rpgmvtranslationextractor/Bundle").getString("TranslationExtractorWindow.outputFolder.approve.text"));
+        chooser.setApproveButtonText(java.util.ResourceBundle.getBundle("pl/gendoria/rpgmvtranslationextractor/TranslationExtractorWindow").getString("TranslationExtractorWindow.outputFolder.approve.text"));
 
         int ret = chooser.showOpenDialog(null);
         if (ret != JFileChooser.APPROVE_OPTION) {
@@ -227,7 +227,7 @@ public class TranslationExtractorWindow extends javax.swing.JFrame {
     private void inputFolderChooserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputFolderChooserActionPerformed
         JFileChooser chooser = new JFileChooser(inputFolder.getText());
         chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-        chooser.setApproveButtonText(java.util.ResourceBundle.getBundle("pl/gendoria/rpgmvtranslationextractor/Bundle").getString("TranslationExtractorWindow.inputFolder.approve.text"));
+        chooser.setApproveButtonText(java.util.ResourceBundle.getBundle("pl/gendoria/rpgmvtranslationextractor/TranslationExtractorWindow").getString("TranslationExtractorWindow.inputFolder.approve.text"));
 
         int ret = chooser.showOpenDialog(null);
         if (ret != JFileChooser.APPROVE_OPTION) {
@@ -264,17 +264,17 @@ public class TranslationExtractorWindow extends javax.swing.JFrame {
         File output = new File(outputFilePath.getText());
 
         if (!input.isDirectory() || outputFilePath.getText().equals("")) { //NOI18N
-            JOptionPane.showMessageDialog(rootPane, java.util.ResourceBundle.getBundle("pl/gendoria/rpgmvtranslationextractor/Bundle").getString("TranslationExtractorWindow.start.error.inputOutputFolders"), java.util.ResourceBundle.getBundle("pl/gendoria/rpgmvtranslationextractor/Bundle").getString("TranslationExtractorWindow.start.error.label"), JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(rootPane, java.util.ResourceBundle.getBundle("pl/gendoria/rpgmvtranslationextractor/TranslationExtractorWindow").getString("TranslationExtractorWindow.start.error.inputOutputFolders"), java.util.ResourceBundle.getBundle("pl/gendoria/rpgmvtranslationextractor/Bundle").getString("TranslationExtractorWindow.start.error.label"), JOptionPane.ERROR_MESSAGE);
             return;
         }
         
         if (!keyFormat.getText().contains("{key}")) { //NOI18N
-            JOptionPane.showMessageDialog(rootPane, java.util.ResourceBundle.getBundle("pl/gendoria/rpgmvtranslationextractor/Bundle").getString("TranslationExtractorWindow.start.error.keyFormatError"), java.util.ResourceBundle.getBundle("pl/gendoria/rpgmvtranslationextractor/Bundle").getString("TranslationExtractorWindow.start.error.label"), JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(rootPane, java.util.ResourceBundle.getBundle("pl/gendoria/rpgmvtranslationextractor/TranslationExtractorWindow").getString("TranslationExtractorWindow.start.error.keyFormatError"), java.util.ResourceBundle.getBundle("pl/gendoria/rpgmvtranslationextractor/Bundle").getString("TranslationExtractorWindow.start.error.label"), JOptionPane.ERROR_MESSAGE);
             return;
         }
 
         if (output.isFile()) {
-            int ret = JOptionPane.showConfirmDialog(rootPane, StringEscapeUtils.unescapeJava(java.util.ResourceBundle.getBundle("pl/gendoria/rpgmvtranslationextractor/Bundle").getString("TranslationExtractorWindow.start.outputFileExistsWarning.text")), java.util.ResourceBundle.getBundle("pl/gendoria/rpgmvtranslationextractor/Bundle").getString("TranslationExtractorWindow.start.outputFileExistsWarning.label"), JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+            int ret = JOptionPane.showConfirmDialog(rootPane, StringEscapeUtils.unescapeJava(java.util.ResourceBundle.getBundle("pl/gendoria/rpgmvtranslationextractor/TranslationExtractorWindow").getString("TranslationExtractorWindow.start.outputFileExistsWarning.text")), java.util.ResourceBundle.getBundle("pl/gendoria/rpgmvtranslationextractor/TranslationExtractorWindow").getString("TranslationExtractorWindow.start.outputFileExistsWarning.label"), JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
             if (ret == JOptionPane.NO_OPTION) {
                 return;
             }
@@ -285,9 +285,9 @@ public class TranslationExtractorWindow extends javax.swing.JFrame {
         
         try {
             saver.save(extractor.extract());
-            JOptionPane.showMessageDialog(rootPane, java.util.ResourceBundle.getBundle("pl/gendoria/rpgmvtranslationextractor/Bundle").getString("TranslationExtractorWindow.start.success.description"), java.util.ResourceBundle.getBundle("pl/gendoria/rpgmvtranslationextractor/Bundle").getString("TranslationExtractorWindow.start.success.label"), JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(rootPane, java.util.ResourceBundle.getBundle("pl/gendoria/rpgmvtranslationextractor/TranslationExtractorWindow").getString("TranslationExtractorWindow.start.success.description"), java.util.ResourceBundle.getBundle("pl/gendoria/rpgmvtranslationextractor/TranslationExtractorWindow").getString("TranslationExtractorWindow.start.success.label"), JOptionPane.INFORMATION_MESSAGE);
         } catch (IOException ex) {
-            JOptionPane.showMessageDialog(rootPane, java.util.ResourceBundle.getBundle("pl/gendoria/rpgmvtranslationextractor/Bundle").getString("TranslationExtractorWindow.start.exception.description")+ex.getMessage(), java.util.ResourceBundle.getBundle("pl/gendoria/rpgmvtranslationextractor/Bundle").getString("TranslationExtractorWindow.start.error.label"), JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(rootPane, java.util.ResourceBundle.getBundle("pl/gendoria/rpgmvtranslationextractor/TranslationExtractorWindow").getString("TranslationExtractorWindow.start.exception.description")+ex.getMessage(), java.util.ResourceBundle.getBundle("pl/gendoria/rpgmvtranslationextractor/TranslationExtractorWindow").getString("TranslationExtractorWindow.start.error.label"), JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_startActionPerformed
 
