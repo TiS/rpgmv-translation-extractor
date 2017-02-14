@@ -3,9 +3,26 @@ jdk:
     - oraclejdk8
     - oraclejdk7
     - openjdk7
+
 before_install:
     - if [[ "$TRAVIS_JDK_VERSION" == "oraclejdk8" ]]; then wget -O maven.tar.gz http://www-eu.apache.org/dist/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz ; fi
     - if [[ "$TRAVIS_JDK_VERSION" == "oraclejdk8" ]]; then mkdir maven ; cd maven ; tar --strip-components=1 -xzf ../maven.tar.gz ; cd .. ; chmod a+x maven/bin/mvn ; export M2_HOME=$PWD/maven ; export PATH=$PWD/maven/bin:${PATH} ; hash -r ; fi
-
+      
 before_script:
     - if [[ "$TRAVIS_JDK_VERSION" == "oraclejdk8" ]]; then export M2_HOME=$PWD/maven ; export PATH=$PWD/maven/bin:${PATH} ; hash -r ; fi
+
+before_deploy:
+    - export RELEASE_FILE=$(ls target/dist/*)
+    - echo "deploying $RELEASE_FILE to GitHub releases"
+    
+deploy:
+    provider: releases
+    api_key:
+        secure: uAuS8tpSV3bONNlobXkeg9y9+KQ7Zo9om9vr42DQWmc/nW859F0pmHAamANnNn0Sts6cQu7WTGTAYryZCJbzdI7VQsAws1o3ZnZjyKb8z8Xhx20/IZ4WLn9LuI8Gr8fwR/GF1w+ppvsRza2rdLwKcEsX2uPBVgbBoZo81RWsbe4qCO9zntrLXIDRG+TRQcDkn4q+rLXMLKmrXCRk84TX1OUh48zAWFtT+bJsyLtXIqIdpPC+w9VzZOhXGFPAvDI1FV1W9ddipPQQecjk7hxe0gg5jfncmgzFzxSvA+bHlMe07tGOBo8g1avwpr8EBQvodt+dpeuEyhiieKtMOlcvG/EdCX8BAEiqGAS0aMRUGzJl1SEayjSFYrXDbhssY2zPDwAVCThjO8diSbF4rqRMa2+slKbivrh4uZdg9+hPW1nWvr85GYzmlxv1haijgGcxs0l4SgSjmntHBhBbk8TpKbDfjr5NRervqe3WraMuVBtFOCys/sJYD3ICDzBOlafLJJJSJohS/QTOboAbfX/A7zgrYWFOZL9jOCvUHwtPTtZ4Ga5vXf5v8/JhaVLvtJviqOfr0dpMD6WeZck0S/JvgWoXyGuGf+cg3UW1JdJnvMSKUQ6K5pTBFeZJjjrS3AXGUnEZGZ/vdikTlXii4zdVYgmNpqo4fgb3rBQNoFCdYk4=
+    file_glob: true
+    file: "${RELEASE_FILE}"
+    skip_cleanup: true
+    on:
+        repo: TiS/rpgmv-translation-extractor
+        jdk: oraclejdk8
+        tags: true
